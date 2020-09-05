@@ -110,6 +110,7 @@ class PhotoFilterViewController: UIViewController {
     // MARK: - Image Filtering
 
     private func updateImage() {
+        // use one baseline image so that compounding doesnt happen, i.e. dont use let scaledImage = imageView.image
         if let scaledImage = scaledImage {
             imageView.image = image(byFiltering: scaledImage)
         } else {
